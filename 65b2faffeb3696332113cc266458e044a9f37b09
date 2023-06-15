@@ -178,6 +178,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "843e66be_9f8e234a",
+        "filename": "README.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-06-15T12:25:11Z",
+      "side": 1,
+      "message": "Yeah, maybe it\u0027s worth adding that in the document?\n\nCould also be helpful to be explicit about why eclipse foundation is not redirecting directly to https://eclipse.gerrithub.io/c/GerritCodeReview/jgit/+/201852, for example.",
+      "parentUuid": "cf5ced12_7bd403ce",
+      "range": {
+        "startLine": 9,
+        "startChar": 23,
+        "endLine": 9,
+        "endChar": 121
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c65ff286_0afee5b3",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
         "patchSetId": 9
@@ -225,6 +249,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "553cf3db_e3255016",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-06-15T12:25:11Z",
+      "side": 1,
+      "message": "Using `/` makes it looks as it\u0027s a different part of the URI. Would it have been the same outcome with `_`.\nMaybe using a variable named `URI_WITH_WRONG_FORMAT` makes sense?",
+      "parentUuid": "5f47ec56_6ba3edcd",
+      "range": {
+        "startLine": 28,
+        "startChar": 66,
+        "endLine": 28,
+        "endChar": 71
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b43da95_88526e4f",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
         "patchSetId": 9
@@ -260,6 +308,30 @@
       "side": 1,
       "message": "This is an IT test and the `789096` is not a magic number. It is valid change number. Check the csv file under `test/resources/change_project.csv`, there is an entry:\n```\n789096,test-namespace/project1\n\n```",
       "parentUuid": "5b43da95_88526e4f",
+      "range": {
+        "startLine": 49,
+        "startChar": 66,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa504b6d_ed95ea8f",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-06-15T12:25:11Z",
+      "side": 1,
+      "message": "Yeah, but you need to know that file exists. Naming this `validProjectNumber` probably makes for easier reading?",
+      "parentUuid": "3387b43a_c0005463",
       "range": {
         "startLine": 49,
         "startChar": 66,
