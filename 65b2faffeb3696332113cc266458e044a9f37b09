@@ -202,6 +202,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f02f0e4b_a92385a5",
+        "filename": "README.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T12:56:08Z",
+      "side": 1,
+      "message": "Let me have a look at it.",
+      "parentUuid": "843e66be_9f8e234a",
+      "range": {
+        "startLine": 9,
+        "startChar": 23,
+        "endLine": 9,
+        "endChar": 121
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c65ff286_0afee5b3",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
         "patchSetId": 9
@@ -261,6 +285,30 @@
       "side": 1,
       "message": "Using `/` makes it looks as it\u0027s a different part of the URI. Would it have been the same outcome with `_`.\nMaybe using a variable named `URI_WITH_WRONG_FORMAT` makes sense?",
       "parentUuid": "5f47ec56_6ba3edcd",
+      "range": {
+        "startLine": 28,
+        "startChar": 66,
+        "endLine": 28,
+        "endChar": 71
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcff4b2d_d63a99d4",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T12:56:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "553cf3db_e3255016",
       "range": {
         "startLine": 28,
         "startChar": 66,
@@ -332,6 +380,30 @@
       "side": 1,
       "message": "Yeah, but you need to know that file exists. Naming this `validProjectNumber` probably makes for easier reading?",
       "parentUuid": "3387b43a_c0005463",
+      "range": {
+        "startLine": 49,
+        "startChar": 66,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "554f49cb_91a1f794",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T12:56:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa504b6d_ed95ea8f",
       "range": {
         "startLine": 49,
         "startChar": 66,
