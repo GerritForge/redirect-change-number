@@ -81,6 +81,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "636a8185_88263265",
+        "filename": "README.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T10:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b178bae9_9ad1de39",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 15
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af2705d0_0be1b100",
@@ -94,6 +118,30 @@
       "writtenOn": "2023-06-15T10:08:45Z",
       "side": 1,
       "message": "Who is doing this first redirection?",
+      "range": {
+        "startLine": 9,
+        "startChar": 23,
+        "endLine": 9,
+        "endChar": 121
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf5ced12_7bd403ce",
+        "filename": "README.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T10:18:52Z",
+      "side": 1,
+      "message": "That direction is made by Eclipse foundation.",
+      "parentUuid": "af2705d0_0be1b100",
       "range": {
         "startLine": 9,
         "startChar": 23,
@@ -129,6 +177,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5f47ec56_6ba3edcd",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T10:18:52Z",
+      "side": 1,
+      "message": "the url is in this format `http://whatevercannonical/12343/324234` and the logic checks if `12343/324234` is a numeric value. I used `12343/324234` but I could have used `URI_WITH_WRONG_FORMAT`. The point here is tha because is not a numeric value. then return a 400.",
+      "parentUuid": "c65ff286_0afee5b3",
+      "range": {
+        "startLine": 28,
+        "startChar": 66,
+        "endLine": 28,
+        "endChar": 71
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b43da95_88526e4f",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
         "patchSetId": 9
@@ -140,6 +212,30 @@
       "writtenOn": "2023-06-15T10:08:45Z",
       "side": 1,
       "message": "Could avoid this magic number?\n\nSame above",
+      "range": {
+        "startLine": 49,
+        "startChar": 66,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "65b2faffeb3696332113cc266458e044a9f37b09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3387b43a_c0005463",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilterIT.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T10:18:52Z",
+      "side": 1,
+      "message": "This is an IT test and the `789096` is not a magic number. It is valid change number. Check the csv file under `test/resources/change_project.csv`, there is an entry:\n```\n789096,test-namespace/project1\n\n```",
+      "parentUuid": "5b43da95_88526e4f",
       "range": {
         "startLine": 49,
         "startChar": 66,

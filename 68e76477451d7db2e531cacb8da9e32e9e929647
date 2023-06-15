@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ba7d074_5ba57810",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-15T10:18:52Z",
+      "side": 1,
+      "message": "@danielesassoli@gmail.com tx for the feedback. Please, let me know if you want to have a chat and we can go trough the code",
+      "revId": "68e76477451d7db2e531cacb8da9e32e9e929647",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
