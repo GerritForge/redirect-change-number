@@ -1,0 +1,388 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "673a25a7_9310a67b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "+ `for the changes imported from the Eclipse Foundation Gerrit server`",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ff5de65_bdafa314",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "Also explain the rationale: we want to allow the Eclipse Foundation to redirect all calls to https://git.eclise.org/r/\u003cchange-num\u003e to https://eclipse.gerrithub.io/\u003cchange-num\u003e",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a0c130f_949e1899",
+        "filename": "BUILD",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "number",
+      "range": {
+        "startLine": 5,
+        "startChar": 28,
+        "endLine": 5,
+        "endChar": 35
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "137dd6ac_07714814",
+        "filename": "BUILD",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "Number",
+      "range": {
+        "startLine": 8,
+        "startChar": 47,
+        "endLine": 8,
+        "endChar": 54
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1609d0a_c35ccc8f",
+        "filename": "README.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "Number",
+      "range": {
+        "startLine": 1,
+        "startChar": 19,
+        "endLine": 1,
+        "endChar": 26
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cf45454_1f6e5bc0",
+        "filename": "README.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "This is incorrect: if the change doesn\u0027t belong to jgit or egit legacy numbers, then it should just let the request through the backend, so that GerritHub.io can use its internal Lucene index to resolve it.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 200
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "075cef20_4326274a",
+        "filename": "script/export_changes.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "Can you explain the purpose in a one liner as a comment?",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2b6f476_a542365d",
+        "filename": "script/export_changes.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "The prefix `https://git.eclipse.org/r/` can be DRY-ed out as env variable at L2",
+      "range": {
+        "startLine": 8,
+        "startChar": 11,
+        "endLine": 8,
+        "endChar": 46
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e500ce24_e4ab44d1",
+        "filename": "script/export_changes.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "You don\u0027t actually need to clone the code: just create a new directory and run an \u0027git init\u0027",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "111315a5_15b7a9fc",
+        "filename": "script/export_changes.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "This part is identical to L8-L11, you can just parametrise the repository name.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 81
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c886052c_ec45d5e4",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/HttpModule.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "Missing license header.",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c17dd562_a443f23d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "Missing license header.",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46daff2c_627acfc2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "`changeNumberUrlPattern` ?",
+      "range": {
+        "startLine": 23,
+        "startChar": 24,
+        "endLine": 23,
+        "endChar": 31
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02ae9c5f_e1ef761a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "The change number could be a new one created directly on eclipse.gerrithub.io, therefore do not return 404 and simply continue to L55",
+      "range": {
+        "startLine": 49,
+        "startChar": 9,
+        "endLine": 49,
+        "endChar": 67
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d25d97ce_03667783",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "This would kill the whole Gerrit UX: any https://eclipse.gerrithub.io that isn\u0027t a change number would return 400 :-(",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 67
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce69f8ba_86476f1c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "This need to be URL-encoded",
+      "range": {
+        "startLine": 70,
+        "startChar": 54,
+        "endLine": 70,
+        "endChar": 65
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1ba9e3d_8d061148",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/csv/ChangeProjectCSVLoader.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "If you have 1M changes for the project `thisismysuperduperlongprojectname`, then the project name is repeated 1M times.\n\nIt should be more effective to have a multimap:\nhttps://guava.dev/releases/23.0/api/docs/com/google/common/collect/Multimap.html",
+      "range": {
+        "startLine": 19,
+        "startChar": 34,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84d84f19_27e469ad",
+        "filename": "src/main/resources/change_project.csv",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-16T23:24:01Z",
+      "side": 1,
+      "message": "You could name the file `change_numbers.\u003cproject-name\u003e.csv` and the file will be alot smaller and only contains the change numbers inside.",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
