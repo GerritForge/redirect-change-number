@@ -683,6 +683,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "53ee4c9c_b3de7a11",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-17T21:17:13Z",
+      "side": 1,
+      "message": "Yep",
+      "parentUuid": "15b92ccf_4968ead5",
+      "range": {
+        "startLine": 70,
+        "startChar": 54,
+        "endLine": 70,
+        "endChar": 65
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c1ba9e3d_8d061148",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/csv/ChangeProjectCSVLoader.java",
         "patchSetId": 13
@@ -728,6 +752,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c96e6110_64ad3514",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/csv/ChangeProjectCSVLoader.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-17T21:17:13Z",
+      "side": 1,
+      "message": "I\u0027m OK in addressing in a follow-up change.",
+      "parentUuid": "5c5864f1_cc98e6cf",
+      "range": {
+        "startLine": 19,
+        "startChar": 34,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84d84f19_27e469ad",
@@ -759,6 +807,24 @@
       "side": 1,
       "message": "The same answer as above.",
       "parentUuid": "84d84f19_27e469ad",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe4937bb_3aca21ed",
+        "filename": "src/main/resources/change_project.csv",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-17T21:17:13Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9c12e8b2_341ca47e",
       "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
