@@ -705,6 +705,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a23620ea_6d6d2017",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeRequestFilter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-18T14:51:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53ee4c9c_b3de7a11",
+      "range": {
+        "startLine": 70,
+        "startChar": 54,
+        "endLine": 70,
+        "endChar": 65
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1ba9e3d_8d061148",
