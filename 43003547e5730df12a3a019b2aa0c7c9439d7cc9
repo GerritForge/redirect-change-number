@@ -83,6 +83,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4166d706_cb871ff9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-18T15:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baecf760_c6e20a0b",
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a0c130f_949e1899",
@@ -96,6 +114,30 @@
       "writtenOn": "2023-06-16T23:24:01Z",
       "side": 1,
       "message": "number",
+      "range": {
+        "startLine": 5,
+        "startChar": 28,
+        "endLine": 5,
+        "endChar": 35
+      },
+      "revId": "43003547e5730df12a3a019b2aa0c7c9439d7cc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e5ad1a8_5b63798c",
+        "filename": "BUILD",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-18T15:17:32Z",
+      "side": 1,
+      "message": "Makes sense to me but i should mention that when the symbolic link is created under plugins, it must be called `redirect-change-number` otherwise the commands:\n```\n bazel build  plugins/redirect-change-number/...\n bazel test  plugins/redirect-change-number/...\n```\nwill not work.",
+      "parentUuid": "0a0c130f_949e1899",
       "range": {
         "startLine": 5,
         "startChar": 28,
