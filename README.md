@@ -37,17 +37,17 @@ Example:
 
 ```
 git clone --recursive https://gerrit.googlesource.com/gerrit && \
-git clone https://review.gerrithub.io/GerritForge/redirect-change-request redirect-change-number && \
+git clone https://review.gerrithub.io/GerritForge/redirect-change-number && \
 cd gerrit/plugins && \
 ln -s ../../redirect-change-number . && cd .. \
-bazel build plugins/redirect-change-number
+bazelisk build plugins/redirect-change-number
 ```
 
 In order to run the test:
 
 Example:
 ```
-bazel test plugins/redirect-change-number/...
+bazelisk test plugins/redirect-change-number/...
 ```
 
 
