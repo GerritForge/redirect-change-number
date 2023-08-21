@@ -17,6 +17,7 @@ package com.googlesource.gerrit.plugins.redirect.api;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -37,49 +38,63 @@ public class RedirectChangeNumberFilterTest {
   @Mock private HttpServletResponse httpServletResponse;
   @Mock private FilterChain filterChain;
   private final Map<Integer, String> changesProjectKeyValueStore = new HashMap<>();
-
-  private final String canonicalUrl = "https://test.com/";
-
+  private final String sslPort = "443";
+  private final String https = "https";
   private final RedirectChangeNumberFilter redirectChangeNumberFilter =
-      new RedirectChangeNumberFilter(canonicalUrl, changesProjectKeyValueStore);
+      new RedirectChangeNumberFilter(changesProjectKeyValueStore);
 
   @Test
-  public void shouldGoNextInChainWhenXForwardedHostHeaderIsNotPresent()
+  public void shouldGoNextInChainWhenNoXForwardedHeadersInRequest()
       throws ServletException, IOException {
+    when(httpServletRequest.getRequestURI()).thenReturn("/some-uri");
     redirectChangeNumberFilter.doFilter(httpServletRequest, httpServletResponse, filterChain);
-    verify(httpServletRequest).getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_HOST);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PORT);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PROTO);
     verify(filterChain).doFilter(httpServletRequest, httpServletResponse);
   }
 
   @Test
-  public void shouldGoNextInChainWhenXForwardedHostHeaderContainsNotExpectedValue()
+  public void shouldGoNextInChainWhenXForwardedHostHeaderIsNotEclipseGerrithubIo()
       throws ServletException, IOException {
-    when(httpServletRequest.getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER))
-        .thenReturn("NOT_EXPECTED_VALUE");
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_HOST))
+        .thenReturn("some-subdomain.some-domain.io");
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PORT)).thenReturn(sslPort);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PROTO)).thenReturn(https);
     redirectChangeNumberFilter.doFilter(httpServletRequest, httpServletResponse, filterChain);
-    verify(httpServletRequest).getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_HOST);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PORT);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PROTO);
     verify(filterChain).doFilter(httpServletRequest, httpServletResponse);
   }
 
   @Test
   public void shouldGoNextInChainWhenWhenNoChangeNumberInURI()
       throws ServletException, IOException {
-    when(httpServletRequest.getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER))
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_HOST))
         .thenReturn(RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PORT)).thenReturn(sslPort);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PROTO)).thenReturn(https);
     when(httpServletRequest.getRequestURI()).thenReturn("/ANY_STRING_VALUE");
     redirectChangeNumberFilter.doFilter(httpServletRequest, httpServletResponse, filterChain);
-    verify(httpServletRequest).getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_HOST);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PORT);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PROTO);
     verify(httpServletRequest).getRequestURI();
     verify(filterChain).doFilter(httpServletRequest, httpServletResponse);
   }
 
   @Test
   public void shouldGoNextInChainWhenProjectIsNotFound() throws ServletException, IOException {
-    when(httpServletRequest.getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER))
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_HOST))
         .thenReturn(RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PORT)).thenReturn(sslPort);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PROTO)).thenReturn(https);
     when(httpServletRequest.getRequestURI()).thenReturn("/7891");
     redirectChangeNumberFilter.doFilter(httpServletRequest, httpServletResponse, filterChain);
-    verify(httpServletRequest).getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_HOST);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PORT);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PROTO);
     verify(httpServletRequest).getRequestURI();
     verify(filterChain).doFilter(httpServletRequest, httpServletResponse);
   }
@@ -89,17 +104,25 @@ public class RedirectChangeNumberFilterTest {
     String project = "Gerrit/project";
     Integer changeNumber = 7891;
     String redirectURL =
-        canonicalUrl
-            + "c/"
+        https
+            + "://"
+            + RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST
+            + ":"
+            + sslPort
+            + "/c/"
             + URLEncoder.encode(project, StandardCharsets.UTF_8.name())
             + "/+/"
             + changeNumber;
     changesProjectKeyValueStore.put(changeNumber, project);
-    when(httpServletRequest.getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER))
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_HOST))
         .thenReturn(RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PORT)).thenReturn(sslPort);
+    when(httpServletRequest.getHeader(HttpHeaders.X_FORWARDED_PROTO)).thenReturn(https);
     when(httpServletRequest.getRequestURI()).thenReturn("/" + changeNumber);
     redirectChangeNumberFilter.doFilter(httpServletRequest, httpServletResponse, filterChain);
-    verify(httpServletRequest).getHeader(RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_HOST);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PORT);
+    verify(httpServletRequest).getHeader(HttpHeaders.X_FORWARDED_PROTO);
     verify(httpServletRequest).getRequestURI();
     verify(httpServletResponse).sendRedirect(redirectURL);
   }
