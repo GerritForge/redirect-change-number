@@ -15,10 +15,11 @@
 package com.googlesource.gerrit.plugins.redirect.api;
 
 import com.google.gerrit.httpd.AllRequestFilter;
-import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.inject.Inject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -39,14 +40,13 @@ public class RedirectChangeNumberFilter extends AllRequestFilter {
 
   static final String ECLIPSE_GERRITHUB_IO_HOST = "eclipse.gerrithub.io";
   static final String X_FORWARDED_HOST_HTTP_HEADER = "X-Forwarded-Host";
+  static final String X_FORWARDED_PORT_HTTP_HEADER = "X-Forwarded-Port";
+  static final String X_FORWARDED_PROTO_HTTP_HEADER = "X-Forwarded-Proto";
   private final Map<Integer, String> changesProjectKeyValueStore;
-  private final String canonicalUrl;
   private final Pattern changeNumberUrlPattern = Pattern.compile("^/(\\d+)$");
 
   @Inject
-  RedirectChangeNumberFilter(
-      @CanonicalWebUrl String canonicalUrl, Map<Integer, String> changeProjectKeyValueStore) {
-    this.canonicalUrl = canonicalUrl;
+  RedirectChangeNumberFilter(Map<Integer, String> changeProjectKeyValueStore) {
     this.changesProjectKeyValueStore = changeProjectKeyValueStore;
   }
 
@@ -57,21 +57,37 @@ public class RedirectChangeNumberFilter extends AllRequestFilter {
     HttpServletResponse httpResponse = (HttpServletResponse) response;
 
     try {
-      Optional<String> maybeRedirectURL =
-          Optional.ofNullable(httpRequest.getHeader(X_FORWARDED_HOST_HTTP_HEADER))
-              .filter(header -> header.equalsIgnoreCase(ECLIPSE_GERRITHUB_IO_HOST))
-              .flatMap(
-                  header ->
-                      extractChangeNumberFromURI(httpRequest.getRequestURI())
-                          .flatMap(
-                              changeNumber ->
-                                  findProjectNameByChangeNumber(changeNumber)
-                                      .map(
-                                          projectName ->
-                                              buildRedirectURL(projectName, changeNumber))));
 
-      if (maybeRedirectURL.isPresent()) {
-        httpResponse.sendRedirect(maybeRedirectURL.get());
+      Optional<String> maybeXFHostHeader =
+          Optional.ofNullable(httpRequest.getHeader(X_FORWARDED_HOST_HTTP_HEADER));
+      Optional<Integer> maybeXFPortHeader =
+          Optional.ofNullable(httpRequest.getHeader(X_FORWARDED_PORT_HTTP_HEADER))
+              .map(Integer::parseInt);
+      Optional<String> maybeXFProtoHeader =
+          Optional.ofNullable(httpRequest.getHeader(X_FORWARDED_PROTO_HTTP_HEADER));
+
+      if (maybeXFHostHeader.isPresent()
+          && maybeXFPortHeader.isPresent()
+          && maybeXFProtoHeader.isPresent()
+          && maybeXFHostHeader.get().equalsIgnoreCase(ECLIPSE_GERRITHUB_IO_HOST)) {
+        Optional<String> maybeRedirectURL =
+            extractChangeNumberFromURI(httpRequest.getRequestURI())
+                .flatMap(
+                    changeNumber ->
+                        findProjectNameByChangeNumber(changeNumber)
+                            .map(
+                                projectName ->
+                                    buildRedirectURL(
+                                        maybeXFProtoHeader.get(),
+                                        maybeXFHostHeader.get(),
+                                        maybeXFPortHeader.get(),
+                                        projectName,
+                                        changeNumber)));
+        if (maybeRedirectURL.isPresent()) {
+          httpResponse.sendRedirect(maybeRedirectURL.get());
+        } else {
+          chain.doFilter(request, response);
+        }
       } else {
         chain.doFilter(request, response);
       }
@@ -94,15 +110,21 @@ public class RedirectChangeNumberFilter extends AllRequestFilter {
     return Optional.ofNullable(changesProjectKeyValueStore.get(changeNumber));
   }
 
-  private String buildRedirectURL(String projectName, int changeNumber) {
+  private String buildRedirectURL(
+      String protocol, String host, int port, String projectName, int changeNumber) {
     try {
-      return String.format(
-          "%sc/%s/+/%s",
-          canonicalUrl,
-          URLEncoder.encode(projectName, StandardCharsets.UTF_8.name()),
-          changeNumber);
+      return new URL(
+              protocol,
+              host,
+              port,
+              String.format(
+                  "/c/%s/+/%s",
+                  URLEncoder.encode(projectName, StandardCharsets.UTF_8.name()), changeNumber))
+          .toString();
     } catch (UnsupportedEncodingException e) {
       throw new IllegalStateException("No UTF-8 support", e);
+    } catch (MalformedURLException e) {
+      throw new IllegalStateException("Error building redirection url", e);
     }
   }
 }
