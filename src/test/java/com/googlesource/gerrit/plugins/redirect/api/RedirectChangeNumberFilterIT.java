@@ -37,6 +37,8 @@ import org.junit.Test;
     httpModule = "com.googlesource.gerrit.plugins.redirect.api.HttpModule")
 public class RedirectChangeNumberFilterIT extends LightweightPluginDaemonTest {
   private final HttpClient httpClient = HttpClients.createMinimal();
+  private static final String SSL_PORT = "443";
+  private static final String HTTPS = "https";
 
   @Test
   public void shouldBe302WhenProjectIsFound() throws IOException {
@@ -46,11 +48,17 @@ public class RedirectChangeNumberFilterIT extends LightweightPluginDaemonTest {
     request.addHeader(
         RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER,
         RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST);
+    request.addHeader(RedirectChangeNumberFilter.X_FORWARDED_PROTO_HTTP_HEADER, "https");
+    request.addHeader(RedirectChangeNumberFilter.X_FORWARDED_PORT_HTTP_HEADER, "443");
     HttpResponse response = httpClient.execute(request);
     Assert.assertEquals(response.getStatusLine().getStatusCode(), HttpServletResponse.SC_FOUND);
     String locationHeaderExpected =
-        canonicalWebUrl.get()
-            + "c/"
+        HTTPS
+            + "://"
+            + RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST
+            + ":"
+            + SSL_PORT
+            + "/c/"
             + URLEncoder.encode(projectName, StandardCharsets.UTF_8.name())
             + "/+/"
             + changeNumber;
