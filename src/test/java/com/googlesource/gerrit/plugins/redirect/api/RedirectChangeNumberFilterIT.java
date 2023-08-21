@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.redirect.api;
 
+import com.google.common.net.HttpHeaders;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
 import com.google.gerrit.acceptance.SkipProjectClone;
 import com.google.gerrit.acceptance.TestPlugin;
@@ -37,6 +38,8 @@ import org.junit.Test;
     httpModule = "com.googlesource.gerrit.plugins.redirect.api.HttpModule")
 public class RedirectChangeNumberFilterIT extends LightweightPluginDaemonTest {
   private final HttpClient httpClient = HttpClients.createMinimal();
+  private final String sslPort = "443";
+  private final String https = "https";
 
   @Test
   public void shouldBe302WhenProjectIsFound() throws IOException {
@@ -44,13 +47,18 @@ public class RedirectChangeNumberFilterIT extends LightweightPluginDaemonTest {
     String projectName = "test-namespace/project1";
     HttpUriRequest request = new HttpGet(canonicalWebUrl.get() + changeNumber);
     request.addHeader(
-        RedirectChangeNumberFilter.X_FORWARDED_HOST_HTTP_HEADER,
-        RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST);
+        HttpHeaders.X_FORWARDED_HOST, RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST);
+    request.addHeader(HttpHeaders.X_FORWARDED_PROTO, "https");
+    request.addHeader(HttpHeaders.X_FORWARDED_PORT, "443");
     HttpResponse response = httpClient.execute(request);
     Assert.assertEquals(response.getStatusLine().getStatusCode(), HttpServletResponse.SC_FOUND);
     String locationHeaderExpected =
-        canonicalWebUrl.get()
-            + "c/"
+        https
+            + "://"
+            + RedirectChangeNumberFilter.ECLIPSE_GERRITHUB_IO_HOST
+            + ":"
+            + sslPort
+            + "/c/"
             + URLEncoder.encode(projectName, StandardCharsets.UTF_8.name())
             + "/+/"
             + changeNumber;
