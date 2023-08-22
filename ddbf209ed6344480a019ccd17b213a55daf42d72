@@ -48,6 +48,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8092045_e9be08cb",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-08-22T10:46:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9576db50_7215b440",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 43
+      },
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da3eebf6_1572b366",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "I need to refresh my java but `httpResponse.sendRedirect(maybeRedirectURL.get());` behave like a `return`?",
       "parentUuid": "da3eebf6_1572b366",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 9
+      },
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb9bba7b_853ae525",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-08-22T10:46:21Z",
+      "side": 1,
+      "message": "\u003e Does not need to be nested, it can be kept outside as before.\n\nI dont think so, there are 2 nested levels of checking and if any fails we need to chain.doFilter",
+      "parentUuid": "ef4a0aaf_1dadc720",
       "range": {
         "startLine": 84,
         "startChar": 0,
