@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9576db50_7215b440",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-08-22T10:12:16Z",
+      "side": 1,
+      "message": "makes sense",
+      "parentUuid": "2c80ad9b_0fb86063",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 43
+      },
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "da3eebf6_1572b366",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
         "patchSetId": 6
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ef4a0aaf_1dadc720",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-08-22T10:12:16Z",
+      "side": 1,
+      "message": "I need to refresh my java but `httpResponse.sendRedirect(maybeRedirectURL.get());` behave like a `return`?",
+      "parentUuid": "da3eebf6_1572b366",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 9
+      },
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c84a83c_790195d4",
         "filename": "src/main/resources/change_project.csv",
         "patchSetId": 6
@@ -60,6 +108,24 @@
       "writtenOn": "2023-08-22T09:57:42Z",
       "side": 1,
       "message": "Why is this change needed?",
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d592bc7_1a8c9548",
+        "filename": "src/main/resources/change_project.csv",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-08-22T10:12:16Z",
+      "side": 1,
+      "message": "mew changes has been created in:\n- https://git.eclipse.org/r/jgit/jgit\n- https://git.eclipse.org/r/egit/egit\n\nsince the last time this was depoloyed",
+      "parentUuid": "7c84a83c_790195d4",
       "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
