@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c80ad9b_0fb86063",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-22T09:57:42Z",
+      "side": 1,
+      "message": "If we are on GerritHub.io and we don\u0027t have them, we should log an error IMHO.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 43
+      },
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da3eebf6_1572b366",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-22T09:57:42Z",
+      "side": 1,
+      "message": "Does not need to be nested, it can be kept outside as before.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 9
+      },
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c84a83c_790195d4",
+        "filename": "src/main/resources/change_project.csv",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-22T09:57:42Z",
+      "side": 1,
+      "message": "Why is this change needed?",
+      "revId": "ddbf209ed6344480a019ccd17b213a55daf42d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
