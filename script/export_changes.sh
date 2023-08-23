@@ -25,7 +25,7 @@ ECLIPSE_FOUNDATION_GERRIT_URL=https://git.eclipse.org/r/
 
 function export_changes_number_from_eclipse_foundation {
     SOURCE_PROJECT_GIT_URL=$ECLIPSE_FOUNDATION_GERRIT_URL$1
-    DESTINATION_PROJECT=GerritForge/$2
+    DESTINATION_PROJECT=GerritCodeReview/$2
     DESTINATION_CSV_FILE=$TMP_FOLDER/$2.csv
     git ls-remote $SOURCE_PROJECT_GIT_URL | grep changes | awk  '{print $2}' | awk -F '/' '{print $4}' | uniq | sort -n | awk 'NF{print $0 ",'${DESTINATION_PROJECT}'"}'  > $DESTINATION_CSV_FILE && \
     echo "Number of changes exported from ${SOURCE_PROJECT_GIT_URL} $(wc -l $DESTINATION_CSV_FILE)"
