@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77037eec_6098554e",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-24T13:48:41Z",
+      "side": 1,
+      "message": "Not needed: the Gerrit plugin APIs are always included.",
+      "revId": "0baedb25430df9e6836c3cd3110f979b475b4ab2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
