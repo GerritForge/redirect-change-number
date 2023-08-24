@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4006fc5_40ac12d2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 27
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-24T14:09:55Z",
+      "side": 1,
+      "message": "It would be useful to also display the target URL.\n`Redirecting /1234 to /GerritCodeReview/jgit/1234`\n\nThat would therefore become:\n`LOGGER.info(\"Redirecting {} to {}\", requestURI, maybeRedirectURL.get())`",
+      "range": {
+        "startLine": 86,
+        "startChar": 22,
+        "endLine": 86,
+        "endChar": 41
+      },
+      "revId": "699270e5f1e1f255231fc2ac77c46dba0d0e30ad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0523dad_6e03eef0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/redirect/api/RedirectChangeNumberFilter.java",
+        "patchSetId": 27
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-24T14:09:55Z",
+      "side": 1,
+      "message": "`maybeChangeNumber.get().get()`",
+      "range": {
+        "startLine": 86,
+        "startChar": 48,
+        "endLine": 86,
+        "endChar": 71
+      },
+      "revId": "699270e5f1e1f255231fc2ac77c46dba0d0e30ad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
