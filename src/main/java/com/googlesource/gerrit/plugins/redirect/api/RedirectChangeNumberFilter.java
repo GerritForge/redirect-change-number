@@ -113,9 +113,8 @@ public class RedirectChangeNumberFilter extends AllRequestFilter {
     Matcher matcher = changeNumberUrlPattern.matcher(uri);
     if (matcher.find()) {
       return Optional.of(Integer.parseInt(matcher.group(1)));
-    } else {
-      return Optional.empty();
     }
+    return Optional.empty();
   }
 
   private Optional<String> findProjectNameByChangeNumber(int changeNumber) {
