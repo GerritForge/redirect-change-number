@@ -15,6 +15,7 @@
 package com.googlesource.gerrit.plugins.redirect.api;
 
 import com.google.common.base.Strings;
+import com.google.common.base.Suppliers;
 import com.google.common.net.HttpHeaders;
 import com.google.gerrit.httpd.AllRequestFilter;
 import com.google.inject.Inject;
@@ -66,7 +67,8 @@ public class RedirectChangeNumberFilter extends AllRequestFilter {
               && !Strings.isNullOrEmpty(forwardedPort)
               && !Strings.isNullOrEmpty(forwardedProto);
 
-      Supplier<Optional<Integer>> maybeChangeNumber = () -> extractChangeNumberFromURI(requestURI);
+      Supplier<Optional<Integer>> maybeChangeNumber =
+          Suppliers.memoize(() -> extractChangeNumberFromURI(requestURI));
 
       if (areForwardedHeadersInRequest && forwardedHost.contains(ECLIPSE_GERRITHUB_IO_HOST)) {
         Optional<String> maybeRedirectURL =
