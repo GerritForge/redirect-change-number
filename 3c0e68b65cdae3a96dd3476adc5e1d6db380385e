@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "757343a3_94406c5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2023-08-25T06:20:48Z",
+      "side": 1,
+      "message": "Verified with\n```\n$ bazel test plugins/redirect-change-number/...\n...\n//plugins/redirect-change-number:redirect_change_number_tests            PASSED in 8.2s\n```",
+      "revId": "3c0e68b65cdae3a96dd3476adc5e1d6db380385e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
